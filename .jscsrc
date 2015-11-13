@@ -1,0 +1,6 @@
+plugins:
+  - 'jscs-config-seegno'
+
+preset: seegno
+
+requirePaddingNewlinesBeforeKeywords: false
