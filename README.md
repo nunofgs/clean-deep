@@ -23,12 +23,12 @@ $ npm install clean-deep
   1. `object` *(Object)*: The source object.
   2. `[options]` *(Object)*: An optional object with the following options:
 
-| Option            | Description | Default value                       |
-|-------------------|-------------|-------------------------------------|
-| _emptyObjects_    | _true_      | Remove empty objects, ie: `{}`      |
-| _emptyStrings_    | _true_      | Remove empty strings, ie: `''`      |
-| _nullValues_      | _true_      | Remove null values, ie: `null`      |
-| _undefinedValues_ | _true_      | Remove null values, ie: `undefined` |
+| Option            | Default value | Description                         |
+|-------------------|---------------|-------------------------------------|
+| _emptyObjects_    | _true_        | Remove empty objects, ie: `{}`      |
+| _emptyStrings_    | _true_        | Remove empty strings, ie: `''`      |
+| _nullValues_      | _true_        | Remove null values, ie: `null`      |
+| _undefinedValues_ | _true_        | Remove null values, ie: `undefined` |
 
 #### Returns
 
@@ -37,11 +37,11 @@ $ npm install clean-deep
 #### Example
 
 ```js
-var defaultsDeep = require('clean-deep');
+var cleanDeep = require('clean-deep');
 
 var object = { foo: '', bar: {}, biz: 'baz', qux: { baz: 'boz', txi: '' } };
 
-defaultsDeep(object);
+cleanDeep(object);
 // => { biz: 'baz', qux: { baz: 'boz' } }
 ```
 
