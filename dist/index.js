@@ -23,7 +23,7 @@ function cleanDeep(object, options) {
     undefinedValues: true
   }, options);
 
-  return _.transform(object, (result, value, key) => {
+  return _.transform(object, function (result, value, key) {
     // Recurse into objects.
     if (_.isPlainObject(value)) {
       value = cleanDeep(value, options);
