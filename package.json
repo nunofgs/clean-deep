@@ -29,7 +29,7 @@
   "scripts": {
     "build": "rm -rf dist/* && babel src/ --out-dir dist/",
     "changelog": "github-changes $npm_package_options_changelog",
-    "lint": "eslint src test && jscs src test",
+    "lint": "eslint src test",
     "test": "NODE_ENV=test mocha $npm_package_options_mocha"
   },
   "dependencies": {
@@ -48,8 +48,6 @@
     "eslint-config-seegno": "^1.1.1",
     "eslint-plugin-babel": "^2.1.1",
     "github-changes": "^1.0.0",
-    "jscs": "^2.5.0",
-    "jscs-config-seegno": "^1.0.1",
     "mocha": "^2.0.1",
     "pre-commit": "^1.0.10",
     "should": "^7.1.1"
