@@ -13,6 +13,7 @@ describe('cleanDeep()', () => {
   it('should pick defined values from the object', () => {
     const object = {
       bar: {},
+      biz: [],
       foo: {
         bar: undefined,
         baz: true,
@@ -62,6 +63,22 @@ describe('cleanDeep()', () => {
       foo: {
         bar: {}
       }
+    });
+  });
+
+  it('should include empty arrays if `emptyArrays` is `false`', () => {
+    const object = {
+      biz: {
+        baz: 123
+      },
+      foo: []
+    };
+
+    cleanDeep(object, { emptyArrays: false }).should.eql({
+      biz: {
+        baz: 123
+      },
+      foo: []
     });
   });
 

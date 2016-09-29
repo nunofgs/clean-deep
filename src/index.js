@@ -11,6 +11,7 @@ import * as _ from 'lodash';
 
 export default function cleanDeep(object, options) {
   options = _.assign({
+    emptyArrays: true,
     emptyObjects: true,
     emptyStrings: true,
     nullValues: true,
@@ -25,6 +26,11 @@ export default function cleanDeep(object, options) {
 
     // Exclude empty objects.
     if (options.emptyObjects && _.isPlainObject(value) && _.isEmpty(value)) {
+      return;
+    }
+
+    // Exclude empty arrays.
+    if (options.emptyArrays && Array.isArray(value) && !value.length) {
       return;
     }
 
