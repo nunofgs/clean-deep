@@ -1,30 +1,26 @@
 {
   "name": "clean-deep",
   "version": "1.0.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/seegno/clean-deep.git"
-  },
   "description": "Remove falsy, empty or nullable values from objects",
-  "main": "./dist/index.js",
   "keywords": [
     "clean",
-    "deep",
-    "clean-deep"
+    "clean-deep",
+    "deep"
   ],
-  "author": {
-    "name": "Nuno Sousa",
-    "email": "nfs@seegno.com",
-    "url": "https://seegno.com"
-  },
   "homepage": "https://github.com/seegno/clean-deep",
   "bugs": {
     "url": "https://github.com/seegno/clean-deep/issues"
   },
   "license": "MIT",
-  "options": {
-    "changelog": "-o seegno -r clean-deep --only-pulls --use-commit-body --title 'Changelog' --date-format '/ YYYY-MM-DD'",
-    "mocha": "--compilers js:babel-core/register --recursive test"
+  "author": {
+    "name": "Nuno Sousa",
+    "email": "nfs@seegno.com",
+    "url": "https://seegno.com"
+  },
+  "main": "./dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seegno/clean-deep.git"
   },
   "scripts": {
     "build": "rm -rf dist/* && babel src/ --out-dir dist/",
@@ -52,6 +48,10 @@
   },
   "engines": {
     "node": ">=5.0.0"
+  },
+  "options": {
+    "changelog": "-o seegno -r clean-deep --only-pulls --use-commit-body --title 'Changelog' --date-format '/ YYYY-MM-DD'",
+    "mocha": "--compilers js:babel-core/register --recursive test"
   },
   "pre-commit": {
     "run": [
