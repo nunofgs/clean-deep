@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/seegno/clean-deep/issues"
   },
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "MIT",
   "options": {
     "changelog": "-o seegno -r clean-deep --only-pulls --use-commit-body --title 'Changelog' --date-format '/ YYYY-MM-DD'",
     "mocha": "--compilers js:babel-core/register --recursive test"
