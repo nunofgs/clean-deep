@@ -1,9 +1,4 @@
 {
-  "plugins": [
-    "add-module-exports",
-    "transform-es2015-arrow-functions",
-    "transform-es2015-modules-commonjs",
-    "transform-export-extensions",
-    "transform-strict-mode"
-  ]
+  "presets": ["es2015-node4"],
+  "plugins": ["add-module-exports"]
 }
