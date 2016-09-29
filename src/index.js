@@ -3,49 +3,49 @@
  * Module dependencies.
  */
 
-import * as _ from 'lodash';
+import isEmpty from 'lodash.isempty';
+import isPlainObject from 'lodash.isplainobject';
+import transform from 'lodash.transform';
 
 /**
  * Export `cleanDeep` function.
  */
 
-export default function cleanDeep(object, options) {
-  options = _.assign({
-    emptyArrays: true,
-    emptyObjects: true,
-    emptyStrings: true,
-    nullValues: true,
-    undefinedValues: true
-  }, options);
-
-  return _.transform(object, (result, value, key) => {
+export default function cleanDeep(object, {
+  emptyArrays = true,
+  emptyObjects = true,
+  emptyStrings = true,
+  nullValues = true,
+  undefinedValues = true
+} = {}) {
+  return transform(object, (result, value, key) => {
     // Recurse into objects.
-    if (_.isPlainObject(value)) {
-      value = cleanDeep(value, options);
+    if (isPlainObject(value)) {
+      value = cleanDeep(value, { emptyObjects, emptyStrings, nullValues, undefinedValues });
     }
 
     // Exclude empty objects.
-    if (options.emptyObjects && _.isPlainObject(value) && _.isEmpty(value)) {
+    if (emptyObjects && isPlainObject(value) && isEmpty(value)) {
       return;
     }
 
     // Exclude empty arrays.
-    if (options.emptyArrays && Array.isArray(value) && !value.length) {
+    if (emptyArrays && Array.isArray(value) && !value.length) {
       return;
     }
 
     // Exclude empty strings.
-    if (options.emptyStrings && value === '') {
+    if (emptyStrings && value === '') {
       return;
     }
 
     // Exclude null values.
-    if (options.nullValues && _.isNull(value)) {
+    if (nullValues && value === null) {
       return;
     }
 
     // Exclude undefined values.
-    if (options.undefinedValues && _.isUndefined(value)) {
+    if (undefinedValues && value === undefined) {
       return;
     }
 
