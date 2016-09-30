@@ -24,6 +24,7 @@
   },
   "scripts": {
     "changelog": "github-changes $npm_package_options_changelog",
+    "coverage": "nyc --reporter=html --reporter=text npm test",
     "lint": "eslint src test",
     "prepublish": "npm run transpile",
     "test": "NODE_ENV=test mocha $npm_package_options_mocha",
@@ -44,6 +45,7 @@
     "eslint-config-seegno": "^6.0.0",
     "github-changes": "^1.0.0",
     "mocha": "^3.1.0",
+    "nyc": "^8.3.0",
     "pre-commit": "^1.0.10",
     "should": "^11.1.0"
   },
@@ -58,5 +60,11 @@
     "run": [
       "lint"
     ]
+  },
+  "nyc": {
+    "include": [
+      "src/"
+    ],
+    "report-dir": "./coverage"
   }
 }
