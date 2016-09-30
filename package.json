@@ -28,7 +28,8 @@
     "lint": "eslint src test",
     "prepublish": "npm run transpile",
     "test": "NODE_ENV=test mocha $npm_package_options_mocha",
-    "transpile": "rm -rf dist/* && babel src --out-dir dist"
+    "transpile": "rm -rf dist/* && babel src --out-dir dist",
+    "version": "npm run changelog --future-release=$npm_package_version && npm run transpile && git add -A CHANGELOG.md dist"
   },
   "dependencies": {
     "lodash.isempty": "^4.4.0",
