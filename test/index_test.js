@@ -18,6 +18,8 @@ describe('cleanDeep()', () => {
         bar: undefined,
         baz: true,
         biz: false,
+        buz: null,
+        net: '',
         qux: 100
       }
     };
