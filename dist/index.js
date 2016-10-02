@@ -5,47 +5,66 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = cleanDeep;
 
-var _lodash = require('lodash');
+var _lodash = require('lodash.isempty');
 
-var _ = _interopRequireWildcard(_lodash);
+var _lodash2 = _interopRequireDefault(_lodash);
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+var _lodash3 = require('lodash.isplainobject');
+
+var _lodash4 = _interopRequireDefault(_lodash3);
+
+var _lodash5 = require('lodash.transform');
+
+var _lodash6 = _interopRequireDefault(_lodash5);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Export `cleanDeep` function.
  */
 
-function cleanDeep(object, options) {
-  options = _.assign({
-    emptyObjects: true,
-    emptyStrings: true,
-    nullValues: true,
-    undefinedValues: true
-  }, options);
+function cleanDeep(object) {
+  var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-  return _.transform(object, function (result, value, key) {
+  var _ref$emptyArrays = _ref.emptyArrays;
+  let emptyArrays = _ref$emptyArrays === undefined ? true : _ref$emptyArrays;
+  var _ref$emptyObjects = _ref.emptyObjects;
+  let emptyObjects = _ref$emptyObjects === undefined ? true : _ref$emptyObjects;
+  var _ref$emptyStrings = _ref.emptyStrings;
+  let emptyStrings = _ref$emptyStrings === undefined ? true : _ref$emptyStrings;
+  var _ref$nullValues = _ref.nullValues;
+  let nullValues = _ref$nullValues === undefined ? true : _ref$nullValues;
+  var _ref$undefinedValues = _ref.undefinedValues;
+  let undefinedValues = _ref$undefinedValues === undefined ? true : _ref$undefinedValues;
+
+  return (0, _lodash6.default)(object, (result, value, key) => {
     // Recurse into objects.
-    if (_.isPlainObject(value)) {
-      value = cleanDeep(value, options);
+    if ((0, _lodash4.default)(value)) {
+      value = cleanDeep(value, { emptyObjects: emptyObjects, emptyStrings: emptyStrings, nullValues: nullValues, undefinedValues: undefinedValues });
     }
 
     // Exclude empty objects.
-    if (options.emptyObjects && _.isPlainObject(value) && _.isEmpty(value)) {
+    if (emptyObjects && (0, _lodash4.default)(value) && (0, _lodash2.default)(value)) {
+      return;
+    }
+
+    // Exclude empty arrays.
+    if (emptyArrays && Array.isArray(value) && !value.length) {
       return;
     }
 
     // Exclude empty strings.
-    if (options.emptyStrings && value === '') {
+    if (emptyStrings && value === '') {
       return;
     }
 
     // Exclude null values.
-    if (options.nullValues && _.isNull(value)) {
+    if (nullValues && value === null) {
       return;
     }
 
     // Exclude undefined values.
-    if (options.undefinedValues && _.isUndefined(value)) {
+    if (undefinedValues && value === undefined) {
       return;
     }
 
@@ -56,4 +75,4 @@ function cleanDeep(object, options) {
  * Module dependencies.
  */
 
-module.exports = Object.assign(exports.default || {}, exports);
+module.exports = exports['default'];
