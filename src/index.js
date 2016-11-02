@@ -21,7 +21,7 @@ export default function cleanDeep(object, {
   return transform(object, (result, value, key) => {
     // Recurse into objects.
     if (isPlainObject(value)) {
-      value = cleanDeep(value, { emptyObjects, emptyStrings, nullValues, undefinedValues });
+      value = cleanDeep(value, { emptyArrays, emptyObjects, emptyStrings, nullValues, undefinedValues });
     }
 
     // Exclude empty objects.

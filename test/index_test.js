@@ -71,6 +71,7 @@ describe('cleanDeep()', () => {
   it('should include empty arrays if `emptyArrays` is `false`', () => {
     const object = {
       biz: {
+        bar: [],
         baz: 123
       },
       foo: []
@@ -78,6 +79,7 @@ describe('cleanDeep()', () => {
 
     cleanDeep(object, { emptyArrays: false }).should.eql({
       biz: {
+        bar: [],
         baz: 123
       },
       foo: []
