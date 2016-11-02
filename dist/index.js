@@ -40,7 +40,7 @@ function cleanDeep(object) {
   return (0, _lodash6.default)(object, (result, value, key) => {
     // Recurse into objects.
     if ((0, _lodash4.default)(value)) {
-      value = cleanDeep(value, { emptyObjects: emptyObjects, emptyStrings: emptyStrings, nullValues: nullValues, undefinedValues: undefinedValues });
+      value = cleanDeep(value, { emptyArrays: emptyArrays, emptyObjects: emptyObjects, emptyStrings: emptyStrings, nullValues: nullValues, undefinedValues: undefinedValues });
     }
 
     // Exclude empty objects.

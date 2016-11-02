@@ -1,5 +1,13 @@
 # Changelog
 
+## [v2.0.1](https://github.com/seegno/clean-deep/tree/v2.0.1) (2016-11-02)
+[Full Changelog](https://github.com/seegno/clean-deep/compare/v2.0.0...v2.0.1)
+
+**Merged pull requests:**
+
+- Upgrade babel-eslint to avoid 'estraverse-fb' error [\#18](https://github.com/seegno/clean-deep/pull/18) ([callmevlad](https://github.com/callmevlad))
+- Fix recursive array cleaning [\#17](https://github.com/seegno/clean-deep/pull/17) ([zeke](https://github.com/zeke))
+
 ## [v2.0.0](https://github.com/seegno/clean-deep/tree/v2.0.0) (2016-10-02)
 [Full Changelog](https://github.com/seegno/clean-deep/compare/1.0.0...v2.0.0)
 
