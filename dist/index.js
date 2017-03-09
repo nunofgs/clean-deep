@@ -24,20 +24,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 
 function cleanDeep(object) {
-  var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+      _ref$emptyArrays = _ref.emptyArrays,
+      emptyArrays = _ref$emptyArrays === undefined ? true : _ref$emptyArrays,
+      _ref$emptyObjects = _ref.emptyObjects,
+      emptyObjects = _ref$emptyObjects === undefined ? true : _ref$emptyObjects,
+      _ref$emptyStrings = _ref.emptyStrings,
+      emptyStrings = _ref$emptyStrings === undefined ? true : _ref$emptyStrings,
+      _ref$nullValues = _ref.nullValues,
+      nullValues = _ref$nullValues === undefined ? true : _ref$nullValues,
+      _ref$undefinedValues = _ref.undefinedValues,
+      undefinedValues = _ref$undefinedValues === undefined ? true : _ref$undefinedValues;
 
-  var _ref$emptyArrays = _ref.emptyArrays;
-  let emptyArrays = _ref$emptyArrays === undefined ? true : _ref$emptyArrays;
-  var _ref$emptyObjects = _ref.emptyObjects;
-  let emptyObjects = _ref$emptyObjects === undefined ? true : _ref$emptyObjects;
-  var _ref$emptyStrings = _ref.emptyStrings;
-  let emptyStrings = _ref$emptyStrings === undefined ? true : _ref$emptyStrings;
-  var _ref$nullValues = _ref.nullValues;
-  let nullValues = _ref$nullValues === undefined ? true : _ref$nullValues;
-  var _ref$undefinedValues = _ref.undefinedValues;
-  let undefinedValues = _ref$undefinedValues === undefined ? true : _ref$undefinedValues;
-
-  return (0, _lodash6.default)(object, (result, value, key) => {
+  return (0, _lodash6.default)(object, function (result, value, key) {
     // Recurse into objects.
     if ((0, _lodash4.default)(value)) {
       value = cleanDeep(value, { emptyArrays: emptyArrays, emptyObjects: emptyObjects, emptyStrings: emptyStrings, nullValues: nullValues, undefinedValues: undefinedValues });

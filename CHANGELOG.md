@@ -1,5 +1,12 @@
 # Changelog
 
+## [v2.0.2](https://github.com/seegno/clean-deep/tree/v2.0.2) (2017-03-09)
+[Full Changelog](https://github.com/seegno/clean-deep/compare/v2.0.1...v2.0.2)
+
+**Merged pull requests:**
+
+- Update dist to es5 to keep uglifyjs compatibility [\#20](https://github.com/seegno/clean-deep/pull/20) ([akofman](https://github.com/akofman))
+
 ## [v2.0.1](https://github.com/seegno/clean-deep/tree/v2.0.1) (2016-11-02)
 [Full Changelog](https://github.com/seegno/clean-deep/compare/v2.0.0...v2.0.1)
 
