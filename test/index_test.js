@@ -33,6 +33,22 @@ describe('cleanDeep()', () => {
     });
   });
 
+  it('should clean arrays', () => {
+    const object = {
+      foo: [{
+        bar: undefined,
+        baz: '',
+        biz: 0
+      }]
+    };
+
+    cleanDeep(object).should.eql({
+      foo: [{
+        biz: 0
+      }]
+    });
+  });
+
   it('should include non plain objects', () => {
     const object = {
       foo: {
@@ -138,14 +154,23 @@ describe('cleanDeep()', () => {
     const object = {
       foo: {
         bar: undefined,
-        biz: 123
+        biz: 123,
+        qux: [
+          undefined,
+          {},
+          true
+        ]
       }
     };
 
     cleanDeep(object, { undefinedValues: false }).should.eql({
       foo: {
         bar: undefined,
-        biz: 123
+        biz: 123,
+        qux: [
+          undefined,
+          true
+        ]
       }
     });
   });

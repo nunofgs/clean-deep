@@ -3,6 +3,7 @@
  * Module dependencies.
  */
 
+import isArray from 'lodash.isarray';
 import isEmpty from 'lodash.isempty';
 import isPlainObject from 'lodash.isplainobject';
 import transform from 'lodash.transform';
@@ -19,8 +20,8 @@ export default function cleanDeep(object, {
   undefinedValues = true
 } = {}) {
   return transform(object, (result, value, key) => {
-    // Recurse into objects.
-    if (isPlainObject(value)) {
+    // Recurse into arrays and objects.
+    if (isArray(value) || isPlainObject(value)) {
       value = cleanDeep(value, { emptyArrays, emptyObjects, emptyStrings, nullValues, undefinedValues });
     }
 
@@ -47,6 +48,11 @@ export default function cleanDeep(object, {
     // Exclude undefined values.
     if (undefinedValues && value === undefined) {
       return;
+    }
+
+    // Append when recursing arrays.
+    if (isArray(result)) {
+      return result.push(value);
     }
 
     result[key] = value;
