@@ -32,6 +32,7 @@
     "version": "npm run changelog --future-release=$npm_package_version && npm run transpile && git add -A CHANGELOG.md dist"
   },
   "dependencies": {
+    "lodash.isarray": "^4.0.0",
     "lodash.isempty": "^4.4.0",
     "lodash.isplainobject": "^4.0.6",
     "lodash.transform": "^4.6.0"
