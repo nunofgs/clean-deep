@@ -2,6 +2,8 @@
 
 Removes empty _objects_, _arrays_, empty _strings_, _null_ and _undefined_ values from objects. Does not alter the original object.
 
+As of version 3.0.0, _clean-deep_ traverses arrays as well as objects.
+
 ## Status
 
 [![npm version][npm-image]][npm-url] [![build status][travis-image]][travis-url]
@@ -28,7 +30,6 @@ _emptyObjects_    | _true_        | Remove empty objects, ie: `{}`
 _emptyStrings_    | _true_        | Remove empty strings, ie: `''`
 _nullValues_      | _true_        | Remove null values, ie: `null`
 _undefinedValues_ | _true_        | Remove null values, ie: `undefined`
-
 
 _(Object)_: Returns the cleansed object.
 
