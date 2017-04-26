@@ -5,22 +5,30 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = cleanDeep;
 
-var _lodash = require('lodash.isempty');
+var _lodash = require('lodash.isarray');
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _lodash3 = require('lodash.isplainobject');
+var _lodash3 = require('lodash.isempty');
 
 var _lodash4 = _interopRequireDefault(_lodash3);
 
-var _lodash5 = require('lodash.transform');
+var _lodash5 = require('lodash.isplainobject');
 
 var _lodash6 = _interopRequireDefault(_lodash5);
+
+var _lodash7 = require('lodash.transform');
+
+var _lodash8 = _interopRequireDefault(_lodash7);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Export `cleanDeep` function.
+ */
+
+/**
+ * Module dependencies.
  */
 
 function cleanDeep(object) {
@@ -36,14 +44,14 @@ function cleanDeep(object) {
       _ref$undefinedValues = _ref.undefinedValues,
       undefinedValues = _ref$undefinedValues === undefined ? true : _ref$undefinedValues;
 
-  return (0, _lodash6.default)(object, function (result, value, key) {
-    // Recurse into objects.
-    if ((0, _lodash4.default)(value)) {
+  return (0, _lodash8.default)(object, function (result, value, key) {
+    // Recurse into arrays and objects.
+    if ((0, _lodash2.default)(value) || (0, _lodash6.default)(value)) {
       value = cleanDeep(value, { emptyArrays: emptyArrays, emptyObjects: emptyObjects, emptyStrings: emptyStrings, nullValues: nullValues, undefinedValues: undefinedValues });
     }
 
     // Exclude empty objects.
-    if (emptyObjects && (0, _lodash4.default)(value) && (0, _lodash2.default)(value)) {
+    if (emptyObjects && (0, _lodash6.default)(value) && (0, _lodash4.default)(value)) {
       return;
     }
 
@@ -67,11 +75,12 @@ function cleanDeep(object) {
       return;
     }
 
+    // Append when recursing arrays.
+    if ((0, _lodash2.default)(result)) {
+      return result.push(value);
+    }
+
     result[key] = value;
   });
 }
-/**
- * Module dependencies.
- */
-
 module.exports = exports['default'];

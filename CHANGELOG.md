@@ -1,5 +1,12 @@
 # Changelog
 
+## [v3.0.0](https://github.com/seegno/clean-deep/tree/v3.0.0) (2017-04-27)
+[Full Changelog](https://github.com/seegno/clean-deep/compare/v2.0.2...v3.0.0)
+
+**Merged pull requests:**
+
+- Clean and traverse arrays [\#22](https://github.com/seegno/clean-deep/pull/22) ([nunofgs](https://github.com/nunofgs))
+
 ## [v2.0.2](https://github.com/seegno/clean-deep/tree/v2.0.2) (2017-03-09)
 [Full Changelog](https://github.com/seegno/clean-deep/compare/v2.0.1...v2.0.2)
 
