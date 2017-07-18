@@ -7,20 +7,19 @@
     "clean-deep",
     "deep"
   ],
-  "homepage": "https://github.com/seegno/clean-deep",
+  "homepage": "https://github.com/nunofgs/clean-deep",
   "bugs": {
-    "url": "https://github.com/seegno/clean-deep/issues"
+    "url": "https://github.com/nunofgs/clean-deep/issues"
   },
   "license": "MIT",
   "author": {
     "name": "Nuno Sousa",
-    "email": "nfs@seegno.com",
-    "url": "https://seegno.com"
+    "email": "nunofgs@gmail.com"
   },
   "main": "./dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/seegno/clean-deep.git"
+    "url": "https://github.com/nunofgs/clean-deep.git"
   },
   "scripts": {
     "changelog": "github_changelog_generator --no-issues --header-label='# Changelog' --future-release=v$npm_config_future_release && sed -i '' -e :a -e '$d;N;2,4ba' -e 'P;D' CHANGELOG.md",
@@ -54,7 +53,7 @@
     "node": ">=4"
   },
   "options": {
-    "changelog": "-o seegno -r clean-deep --only-pulls --use-commit-body --title 'Changelog' --date-format '/ YYYY-MM-DD'",
+    "changelog": "-o nunofgs -r clean-deep --only-pulls --use-commit-body --title 'Changelog' --date-format '/ YYYY-MM-DD'",
     "mocha": "--compilers js:babel-core/register --recursive test"
   },
   "pre-commit": {
