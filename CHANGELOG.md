@@ -1,5 +1,12 @@
 # Changelog
 
+## [v3.0.1](https://github.com/nunofgs/clean-deep/tree/v3.0.1) (2017-07-18)
+[Full Changelog](https://github.com/nunofgs/clean-deep/compare/v3.0.0...v3.0.1)
+
+**Merged pull requests:**
+
+- Update ownership [\#23](https://github.com/nunofgs/clean-deep/pull/23) ([nunofgs](https://github.com/nunofgs))
+
 ## [v3.0.0](https://github.com/nunofgs/clean-deep/tree/v3.0.0) (2017-04-26)
 [Full Changelog](https://github.com/nunofgs/clean-deep/compare/v2.0.2...v3.0.0)
 
