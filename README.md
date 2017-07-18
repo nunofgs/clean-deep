@@ -72,5 +72,5 @@ MIT
 
 [npm-image]: https://img.shields.io/npm/v/clean-deep.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/clean-deep
-[travis-image]: https://img.shields.io/travis/seegno/clean-deep.svg?style=flat-square
-[travis-url]: https://travis-ci.org/seegno/clean-deep
+[travis-image]: https://img.shields.io/travis/nunofgs/clean-deep.svg?style=flat-square
+[travis-url]: https://travis-ci.org/nunofgs/clean-deep
