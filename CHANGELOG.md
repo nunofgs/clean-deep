@@ -1,5 +1,12 @@
 # Changelog
 
+## [v3.0.2](https://github.com/nunofgs/clean-deep/tree/v3.0.2) (2017-08-29)
+[Full Changelog](https://github.com/nunofgs/clean-deep/compare/v3.0.1...v3.0.2)
+
+**Merged pull requests:**
+
+- Replace lodash.isarray with Array.isArray\(\) [\#25](https://github.com/nunofgs/clean-deep/pull/25) ([elrumordelaluz](https://github.com/elrumordelaluz))
+
 ## [v3.0.1](https://github.com/nunofgs/clean-deep/tree/v3.0.1) (2017-07-18)
 [Full Changelog](https://github.com/nunofgs/clean-deep/compare/v3.0.0...v3.0.1)
 
