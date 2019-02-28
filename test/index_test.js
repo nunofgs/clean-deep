@@ -118,22 +118,6 @@ describe('cleanDeep()', () => {
     });
   });
 
-  it('should include falsy values if `falsyValues` is `false`', () => {
-    const object = {
-      foo: {
-        bar: false,
-        biz: 123
-      }
-    };
-
-    cleanDeep(object, { falsyValues: false }).should.eql({
-      foo: {
-        bar: false,
-        biz: 123
-      }
-    });
-  });
-
   it('should include null values if `nullValues` is `false`', () => {
     const object = {
       foo: {
