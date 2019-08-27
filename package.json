@@ -16,7 +16,7 @@
     "name": "Nuno Sousa",
     "email": "nunofgs@gmail.com"
   },
-  "main": "./dist/index.js",
+  "main": "./src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/nunofgs/clean-deep.git"
@@ -25,9 +25,7 @@
     "changelog": "github_changelog_generator --no-issues --header-label='# Changelog' --future-release=v$npm_config_future_release && sed -i '' -e :a -e '$d;N;2,4ba' -e 'P;D' CHANGELOG.md",
     "coverage": "nyc --reporter=html --reporter=text npm test",
     "lint": "eslint .",
-    "prepublish": "npm run transpile",
     "test": "NODE_ENV=test mocha $npm_package_options_mocha",
-    "transpile": "rm -rf dist/* && babel src --out-dir dist",
     "version": "npm run changelog --future-release=$npm_package_version && npm run transpile && git add -A CHANGELOG.md dist"
   },
   "dependencies": {
@@ -48,7 +46,7 @@
   },
   "options": {
     "changelog": "-o nunofgs -r clean-deep --only-pulls --use-commit-body --title 'Changelog' --date-format '/ YYYY-MM-DD'",
-    "mocha": "--compilers js:babel-core/register --recursive test"
+    "mocha": "--recursive test"
   },
   "pre-commit": {
     "run": [

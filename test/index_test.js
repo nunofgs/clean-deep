@@ -3,7 +3,7 @@
  * Module dependencies.
  */
 
-import cleanDeep from '../src/index';
+const cleanDeep = require ('../src/index');
 
 /**
  * Test `cleanDeep`.
