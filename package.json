@@ -22,10 +22,10 @@
     "url": "https://github.com/nunofgs/clean-deep.git"
   },
   "scripts": {
-    "changelog": "github_changelog_generator --no-issues --header-label='# Changelog' --future-release=v$npm_config_future_release && sed -i '' -e :a -e '$d;N;2,4ba' -e 'P;D' CHANGELOG.md",
+    "changelog": "github-changelog-generator --owner=nunofgs --repo=clean-deep --future-release=v$npm_package_version > CHANGELOG.md",
     "lint": "eslint .",
     "test": "jest",
-    "version": "npm run changelog --future-release=$npm_package_version && npm run transpile && git add -A CHANGELOG.md dist"
+    "version": "yarn changelog && git add -A CHANGELOG.md"
   },
   "dependencies": {
     "jest": "^24.9.0",
@@ -34,6 +34,7 @@
     "lodash.transform": "^4.6.0"
   },
   "devDependencies": {
+    "@uphold/github-changelog-generator": "^0.8.1",
     "eslint": "^6.2.2",
     "eslint-config-uphold": "^1.0.0",
     "husky": "^3.0.4",
@@ -60,8 +61,5 @@
     ],
     "testEnvironment": "node",
     "testRegex": "test/.*\\.test.js$"
-  },
-  "options": {
-    "changelog": "-o nunofgs -r clean-deep --only-pulls --use-commit-body --title 'Changelog' --date-format '/ YYYY-MM-DD'"
   }
 }
