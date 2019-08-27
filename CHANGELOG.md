@@ -1,10 +1,12 @@
 # Changelog
 
+## [v3.0.4](https://github.com/nunofgs/clean-deep/releases/tag/v3.0.4) (2019-08-27)
+
 ## [v3.0.3](https://github.com/nunofgs/clean-deep/releases/tag/v3.0.3) (2019-08-27)
-- Update to modern standards [\#27](https://github.com/nunofgs/clean-deep/pull/27) ([nunofgs](https://github.com/nunofgs))
-- Removed test for not implemented functionality [\#26](https://github.com/nunofgs/clean-deep/pull/26) ([mikaello](https://github.com/mikaello))
 
 ## [v3.0.2](https://github.com/nunofgs/clean-deep/releases/tag/v3.0.2) (2019-08-27)
+- Update to modern standards [\#27](https://github.com/nunofgs/clean-deep/pull/27) ([nunofgs](https://github.com/nunofgs))
+- Removed test for not implemented functionality [\#26](https://github.com/nunofgs/clean-deep/pull/26) ([mikaello](https://github.com/mikaello))
 - Replace lodash.isarray with Array.isArray() [\#25](https://github.com/nunofgs/clean-deep/pull/25) ([elrumordelaluz](https://github.com/elrumordelaluz))
 
 ## [v3.0.1](https://github.com/nunofgs/clean-deep/releases/tag/v3.0.1) (2017-07-18)
