@@ -23,12 +23,12 @@
   },
   "scripts": {
     "changelog": "github_changelog_generator --no-issues --header-label='# Changelog' --future-release=v$npm_config_future_release && sed -i '' -e :a -e '$d;N;2,4ba' -e 'P;D' CHANGELOG.md",
-    "coverage": "nyc --reporter=html --reporter=text npm test",
     "lint": "eslint .",
-    "test": "NODE_ENV=test mocha $npm_package_options_mocha",
+    "test": "jest",
     "version": "npm run changelog --future-release=$npm_package_version && npm run transpile && git add -A CHANGELOG.md dist"
   },
   "dependencies": {
+    "jest": "^24.9.0",
     "lodash.isempty": "^4.4.0",
     "lodash.isplainobject": "^4.0.6",
     "lodash.transform": "^4.6.0"
@@ -37,10 +37,7 @@
     "eslint": "^6.2.2",
     "eslint-config-uphold": "^1.0.0",
     "husky": "^3.0.4",
-    "lint-staged": "^9.2.5",
-    "mocha": "^3.1.0",
-    "nyc": "^8.3.0",
-    "should": "^11.1.0"
+    "lint-staged": "^9.2.5"
   },
   "engines": {
     "node": ">=4"
@@ -56,14 +53,15 @@
       "git add"
     ]
   },
-  "options": {
-    "changelog": "-o nunofgs -r clean-deep --only-pulls --use-commit-body --title 'Changelog' --date-format '/ YYYY-MM-DD'",
-    "mocha": "--recursive test"
-  },
-  "nyc": {
-    "include": [
-      "src/"
+  "jest": {
+    "collectCoverage": true,
+    "modulePaths": [
+      "<rootDir>"
     ],
-    "report-dir": "./coverage"
+    "testEnvironment": "node",
+    "testRegex": "test/.*\\.test.js$"
+  },
+  "options": {
+    "changelog": "-o nunofgs -r clean-deep --only-pulls --use-commit-body --title 'Changelog' --date-format '/ YYYY-MM-DD'"
   }
 }

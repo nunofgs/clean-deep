@@ -24,7 +24,7 @@ describe('cleanDeep()', () => {
       }
     };
 
-    cleanDeep(object).should.eql({
+    expect(cleanDeep(object)).toEqual({
       foo: {
         baz: true,
         biz: false,
@@ -42,7 +42,7 @@ describe('cleanDeep()', () => {
       }]
     };
 
-    cleanDeep(object).should.eql({
+    expect(cleanDeep(object)).toEqual({
       foo: [{
         biz: 0
       }]
@@ -57,7 +57,7 @@ describe('cleanDeep()', () => {
       }
     };
 
-    cleanDeep(object).should.eql({
+    expect(cleanDeep(object)).toEqual({
       foo: {
         bar: new Date(0)
       }
@@ -74,7 +74,7 @@ describe('cleanDeep()', () => {
       }
     };
 
-    cleanDeep(object, { emptyObjects: false }).should.eql({
+    expect(cleanDeep(object, { emptyObjects: false })).toEqual({
       biz: {
         baz: 123
       },
@@ -93,7 +93,7 @@ describe('cleanDeep()', () => {
       foo: []
     };
 
-    cleanDeep(object, { emptyArrays: false }).should.eql({
+    expect(cleanDeep(object, { emptyArrays: false })).toEqual({
       biz: {
         bar: [],
         baz: 123
@@ -110,7 +110,7 @@ describe('cleanDeep()', () => {
       }
     };
 
-    cleanDeep(object, { emptyStrings: false }).should.eql({
+    expect(cleanDeep(object, { emptyStrings: false })).toEqual({
       foo: {
         bar: '',
         biz: 123
@@ -126,7 +126,7 @@ describe('cleanDeep()', () => {
       }
     };
 
-    cleanDeep(object, { nullValues: false }).should.eql({
+    expect(cleanDeep(object, { nullValues: false })).toEqual({
       foo: {
         bar: null,
         biz: 123
@@ -147,7 +147,7 @@ describe('cleanDeep()', () => {
       }
     };
 
-    cleanDeep(object, { undefinedValues: false }).should.eql({
+    expect(cleanDeep(object, { undefinedValues: false })).toEqual({
       foo: {
         bar: undefined,
         biz: 123,
