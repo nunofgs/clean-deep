@@ -24,7 +24,7 @@
   "scripts": {
     "changelog": "github_changelog_generator --no-issues --header-label='# Changelog' --future-release=v$npm_config_future_release && sed -i '' -e :a -e '$d;N;2,4ba' -e 'P;D' CHANGELOG.md",
     "coverage": "nyc --reporter=html --reporter=text npm test",
-    "lint": "eslint src test",
+    "lint": "eslint .",
     "prepublish": "npm run transpile",
     "test": "NODE_ENV=test mocha $npm_package_options_mocha",
     "transpile": "rm -rf dist/* && babel src --out-dir dist",
@@ -36,13 +36,8 @@
     "lodash.transform": "^4.6.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.16.0",
-    "babel-core": "^6.16.0",
-    "babel-eslint": "^6.1.2",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-es2015": "^6.22.0",
-    "eslint": "^3.6.1",
-    "eslint-config-seegno": "^6.0.0",
+    "eslint": "^6.2.2",
+    "eslint-config-uphold": "^1.0.0",
     "mocha": "^3.1.0",
     "nyc": "^8.3.0",
     "pre-commit": "^1.0.10",
