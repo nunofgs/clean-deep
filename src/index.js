@@ -3,15 +3,15 @@
  * Module dependencies.
  */
 
-import isEmpty from 'lodash.isempty';
-import isPlainObject from 'lodash.isplainobject';
-import transform from 'lodash.transform';
+const isEmpty = require('lodash.isempty');
+const isPlainObject = require('lodash.isplainobject');
+const transform = require('lodash.transform');
 
 /**
  * Export `cleanDeep` function.
  */
 
-export default function cleanDeep(object, {
+module.exports = function cleanDeep(object, {
   emptyArrays = true,
   emptyObjects = true,
   emptyStrings = true,
