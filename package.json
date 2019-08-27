@@ -36,22 +36,29 @@
   "devDependencies": {
     "eslint": "^6.2.2",
     "eslint-config-uphold": "^1.0.0",
+    "husky": "^3.0.4",
+    "lint-staged": "^9.2.5",
     "mocha": "^3.1.0",
     "nyc": "^8.3.0",
-    "pre-commit": "^1.0.10",
     "should": "^11.1.0"
   },
   "engines": {
     "node": ">=4"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn lint --fix",
+      "git add"
+    ]
+  },
   "options": {
     "changelog": "-o nunofgs -r clean-deep --only-pulls --use-commit-body --title 'Changelog' --date-format '/ YYYY-MM-DD'",
     "mocha": "--recursive test"
-  },
-  "pre-commit": {
-    "run": [
-      "lint"
-    ]
   },
   "nyc": {
     "include": [
