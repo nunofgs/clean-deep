@@ -1,5 +1,8 @@
 # Changelog
 
+## [v3.0.5](https://github.com/nunofgs/clean-deep/releases/tag/v3.0.5) (2019-09-10)
+- Move jest to dev dependencies [\#30](https://github.com/nunofgs/clean-deep/pull/30) ([nunofgs](https://github.com/nunofgs))
+
 ## [v3.0.4](https://github.com/nunofgs/clean-deep/releases/tag/v3.0.4) (2019-08-27)
 
 ## [v3.0.3](https://github.com/nunofgs/clean-deep/releases/tag/v3.0.3) (2019-08-27)
