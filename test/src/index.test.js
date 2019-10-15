@@ -64,6 +64,23 @@ describe('cleanDeep()', () => {
     });
   });
 
+  it('should support custom values', () => {
+    const object = {
+      biz: {
+        baz: 123
+      },
+      foo: {
+        bar: 'abc'
+      }
+    };
+
+    expect(cleanDeep(object, { cleanValues: ['abc'] })).toEqual({
+      biz: {
+        baz: 123
+      }
+    });
+  });
+
   it('should include empty objects if `emptyObjects` is `false`', () => {
     const object = {
       biz: {
