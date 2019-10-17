@@ -30,7 +30,7 @@ _emptyArrays_     | _true_        | Remove empty arrays, ie: `[]`
 _emptyObjects_    | _true_        | Remove empty objects, ie: `{}`
 _emptyStrings_    | _true_        | Remove empty strings, ie: `''`
 _nullValues_      | _true_        | Remove null values, ie: `null`
-_undefinedValues_ | _true_        | Remove null values, ie: `undefined`
+_undefinedValues_ | _true_        | Remove undefined values, ie: `undefined`
 
 _(Object)_: Returns the cleansed object.
 
