@@ -25,6 +25,7 @@ $ npm install clean-deep --save
 
 Option            | Default value | Description
 ----------------- | ------------- | -----------------------------------
+_cleanKeys_       | _[]_          | Remove specific keys, ie: `['foo', 'bar', ' ']`
 _cleanValues_     | _[]_          | Remove specific values, ie: `['foo', 'bar', ' ']`
 _emptyArrays_     | _true_        | Remove empty arrays, ie: `[]`
 _emptyObjects_    | _true_        | Remove empty objects, ie: `{}`
