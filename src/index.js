@@ -12,6 +12,7 @@ const transform = require('lodash.transform');
  */
 
 module.exports = function cleanDeep(object, {
+  cleanKeys = [],
   cleanValues = [],
   emptyArrays = true,
   emptyObjects = true,
@@ -20,9 +21,14 @@ module.exports = function cleanDeep(object, {
   undefinedValues = true
 } = {}) {
   return transform(object, (result, value, key) => {
+    // Exclude specific keys.
+    if (cleanKeys.includes(key)) {
+      return;
+    }
+    
     // Recurse into arrays and objects.
     if (Array.isArray(value) || isPlainObject(value)) {
-      value = cleanDeep(value, { cleanValues, emptyArrays, emptyObjects, emptyStrings, nullValues, undefinedValues });
+      value = cleanDeep(value, { cleanKeys, cleanValues, emptyArrays, emptyObjects, emptyStrings, nullValues, undefinedValues });
     }
 
     // Exclude specific values.

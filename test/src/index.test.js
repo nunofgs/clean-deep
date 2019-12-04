@@ -175,4 +175,30 @@ describe('cleanDeep()', () => {
       }
     });
   });
+
+  it('should remove specified keys if `cleanKeys` is passed', () => {
+    const object = {
+      foo: {
+        alsoMe: {
+          biz: 123,
+        },
+        bar: undefined,
+        biz: 123,
+        qux: [
+          undefined,
+          {},
+          true
+        ],
+        removeMe: true,
+      },
+      removeMe: true,
+    };
+
+    expect(cleanDeep(object, { cleanKeys: ['removeMe', 'alsoMe'] })).toEqual({
+      foo: {
+        biz: 123,
+        qux: [true]
+      }
+    });
+  });
 });
