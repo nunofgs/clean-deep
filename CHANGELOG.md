@@ -1,5 +1,12 @@
 # Changelog
 
+## [v3.2.0](https://github.com/nunofgs/clean-deep/releases/tag/v3.2.0) (2019-12-04)
+- add cleanKeys option [\#35](https://github.com/nunofgs/clean-deep/pull/35) ([kalimantos](https://github.com/kalimantos))
+- Fixed wrong wording [\#32](https://github.com/nunofgs/clean-deep/pull/32) ([lindekaer](https://github.com/lindekaer))
+
+## [v3.1.0](https://github.com/nunofgs/clean-deep/releases/tag/v3.1.0) (2019-10-15)
+- Add custom values support [\#31](https://github.com/nunofgs/clean-deep/pull/31) ([nunofgs](https://github.com/nunofgs))
+
 ## [v3.0.5](https://github.com/nunofgs/clean-deep/releases/tag/v3.0.5) (2019-09-10)
 - Move jest to dev dependencies [\#30](https://github.com/nunofgs/clean-deep/pull/30) ([nunofgs](https://github.com/nunofgs))
 
