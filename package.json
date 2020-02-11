@@ -1,6 +1,6 @@
 {
   "name": "clean-deep",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "Remove falsy, empty or nullable values from objects",
   "keywords": [
     "clean",
