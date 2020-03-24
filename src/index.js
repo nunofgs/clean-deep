@@ -17,6 +17,7 @@ module.exports = function cleanDeep(object, {
   emptyArrays = true,
   emptyObjects = true,
   emptyStrings = true,
+  emptyStringsReplace = null,
   nullValues = true,
   undefinedValues = true
 } = {}) {
@@ -28,7 +29,7 @@ module.exports = function cleanDeep(object, {
     
     // Recurse into arrays and objects.
     if (Array.isArray(value) || isPlainObject(value)) {
-      value = cleanDeep(value, { cleanKeys, cleanValues, emptyArrays, emptyObjects, emptyStrings, nullValues, undefinedValues });
+      value = cleanDeep(value, { cleanKeys, cleanValues, emptyArrays, emptyObjects, emptyStrings, emptyStringsReplace, nullValues, undefinedValues });
     }
 
     // Exclude specific values.
@@ -48,7 +49,12 @@ module.exports = function cleanDeep(object, {
 
     // Exclude empty strings.
     if (emptyStrings && value === '') {
-      return;
+      // Replace empty strings with someother value.
+      if (emptyStringsReplace) {
+        value = emptyStringsReplace;
+      } else {
+        return;
+      }
     }
 
     // Exclude null values.

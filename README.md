@@ -30,6 +30,7 @@ _cleanValues_     | _[]_          | Remove specific values, ie: `['foo', 'bar', 
 _emptyArrays_     | _true_        | Remove empty arrays, ie: `[]`
 _emptyObjects_    | _true_        | Remove empty objects, ie: `{}`
 _emptyStrings_    | _true_        | Remove empty strings, ie: `''`
+_emptyStringsReplace_    | _null_        | Replace empty strings with other value, ie: replace `''` with `'myvalue'`
 _nullValues_      | _true_        | Remove null values, ie: `null`
 _undefinedValues_ | _true_        | Remove undefined values, ie: `undefined`
 

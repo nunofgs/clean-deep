@@ -201,4 +201,28 @@ describe('cleanDeep()', () => {
       }
     });
   });
+
+  it('should replace empty strings with someother value', () => {
+    const object = {
+      bar: {},
+      biz: [],
+      foo: {
+        bar: undefined,
+        baz: true,
+        biz: false,
+        buz: null,
+        net: '',
+        qux: 100
+      }
+    };
+
+    expect(cleanDeep(object, { emptyStringsReplace: 'other value'})).toEqual({
+      foo: {
+        baz: true,
+        biz: false,
+        net: 'other value',
+        qux: 100
+      }
+    });
+  });
 });
