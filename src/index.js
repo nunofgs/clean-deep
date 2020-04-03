@@ -17,6 +17,7 @@ module.exports = function cleanDeep(object, {
   emptyArrays = true,
   emptyObjects = true,
   emptyStrings = true,
+  NaNValues = false,
   nullValues = true,
   undefinedValues = true
 } = {}) {
@@ -25,10 +26,10 @@ module.exports = function cleanDeep(object, {
     if (cleanKeys.includes(key)) {
       return;
     }
-    
+
     // Recurse into arrays and objects.
     if (Array.isArray(value) || isPlainObject(value)) {
-      value = cleanDeep(value, { cleanKeys, cleanValues, emptyArrays, emptyObjects, emptyStrings, nullValues, undefinedValues });
+      value = cleanDeep(value, { NaNValues, cleanKeys, cleanValues, emptyArrays, emptyObjects, emptyStrings, nullValues, undefinedValues });
     }
 
     // Exclude specific values.
@@ -51,6 +52,11 @@ module.exports = function cleanDeep(object, {
       return;
     }
 
+    // Exclude NaN values.
+    if (NaNValues && Number.isNaN(value)) {
+      return;
+    }
+
     // Exclude null values.
     if (nullValues && value === null) {
       return;
@@ -68,4 +74,4 @@ module.exports = function cleanDeep(object, {
 
     result[key] = value;
   });
-}
+};

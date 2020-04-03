@@ -1,6 +1,6 @@
 # clean-deep
 
-Removes empty _objects_, _arrays_, empty _strings_, _null_ and _undefined_ values from objects. Does not alter the original object.
+Removes empty _objects_, _arrays_, empty _strings_, _NaN_, _null_ and _undefined_ values from objects. Does not alter the original object.
 
 As of version 3.0.0, _clean-deep_ traverses arrays as well as objects.
 
@@ -30,6 +30,7 @@ _cleanValues_     | _[]_          | Remove specific values, ie: `['foo', 'bar', 
 _emptyArrays_     | _true_        | Remove empty arrays, ie: `[]`
 _emptyObjects_    | _true_        | Remove empty objects, ie: `{}`
 _emptyStrings_    | _true_        | Remove empty strings, ie: `''`
+_NaNValues_       | _false_       | Remove NaN values, ie: `NaN`
 _nullValues_      | _true_        | Remove null values, ie: `null`
 _undefinedValues_ | _true_        | Remove undefined values, ie: `undefined`
 

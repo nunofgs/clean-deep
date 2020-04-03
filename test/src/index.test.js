@@ -135,6 +135,43 @@ describe('cleanDeep()', () => {
     });
   });
 
+  it('should exclude NaN values', () => {
+    const object = {
+      bar: NaN,
+      foo: {
+        bar: NaN,
+        biz: 33,
+        qux: [NaN, 1, { foo: 'foo'}]
+      }
+    };
+
+    expect(cleanDeep(object, { NaNValues: true })).toEqual({
+      foo: {
+        biz: 33,
+        qux: [1, { foo: 'foo'}]
+      }
+    })
+  });
+
+  it('should include NaN values if `NaNValues` is `false`', () => {
+    const object = {
+      bar: NaN,
+      foo: {
+        bar: NaN,
+        biz: null,
+        qux: [NaN, undefined, { foo: 'foo'}]
+      }
+    };
+
+    expect(cleanDeep(object, { NaNValues: false })).toEqual({
+      bar: NaN,
+      foo: {
+        bar: NaN,
+        qux: [NaN, { foo: 'foo'}]
+      }
+    })
+  });
+
   it('should include null values if `nullValues` is `false`', () => {
     const object = {
       foo: {
