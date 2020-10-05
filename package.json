@@ -17,6 +17,9 @@
     "email": "nunofgs@gmail.com"
   },
   "main": "./src/index.js",
+  "files": [
+    "src/**/*"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/nunofgs/clean-deep.git"
