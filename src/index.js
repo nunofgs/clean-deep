@@ -68,7 +68,7 @@ module.exports = function cleanDeep(object, {
     }
 
     // Append when recursing arrays.
-    if (Array.isArray(result)) {
+    if (Array.isArray(result) && !(isPlainObject(value) && isEmpty(value))) {
       return result.push(value);
     }
 
