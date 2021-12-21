@@ -23,16 +23,18 @@ $ npm install clean-deep --save
 1. `object` _(Object)_: The source object.
 2. `[options]` _(Object)_: An optional object with the following options:
 
-Option            | Default value | Description
------------------ | ------------- | -----------------------------------
-_cleanKeys_       | _[]_          | Remove specific keys, ie: `['foo', 'bar', ' ']`
-_cleanValues_     | _[]_          | Remove specific values, ie: `['foo', 'bar', ' ']`
-_emptyArrays_     | _true_        | Remove empty arrays, ie: `[]`
-_emptyObjects_    | _true_        | Remove empty objects, ie: `{}`
-_emptyStrings_    | _true_        | Remove empty strings, ie: `''`
-_NaNValues_       | _false_       | Remove NaN values, ie: `NaN`
-_nullValues_      | _true_        | Remove null values, ie: `null`
-_undefinedValues_ | _true_        | Remove undefined values, ie: `undefined`
+| Option                | Default value | Description
+| --------------------- | ------------- | -------------------------------------------------
+| _cleanKeys_           | _[]_          | Remove specific keys, ie: `['foo', 'bar', ' ']`  
+| _cleanKeysPrefixes_   | _[]_          | Remove keys with specific prefixes, ie: `['foo', 'bar', '_private']`  
+| _cleanValues_         | _[]_          | Remove specific values, ie: `['foo', 'bar', ' ']`
+| _cleanValuesPrefixes_ | _[]_          | Remove string values with specific prefixes, ie: `['foo', 'bar', '_private']`
+| _emptyArrays_         | _true_        | Remove empty arrays, ie: `[]`
+| _emptyObjects_        | _true_        | Remove empty objects, ie: `{}`
+| _emptyStrings_        | _true_        | Remove empty strings, ie: `''`
+| _NaNValues_           | _false_       | Remove NaN values, ie: `NaN`
+| _nullValues_          | _true_        | Remove null values, ie: `null`
+| _undefinedValues_     | _true_        | Remove undefined values, ie: `undefined`
 
 _(Object)_: Returns the cleansed object.
 
