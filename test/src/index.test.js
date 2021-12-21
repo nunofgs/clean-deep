@@ -238,4 +238,58 @@ describe('cleanDeep()', () => {
       }
     });
   });
+
+  it('should remove keys with specified prefix if `cleanKeysPrefixes` is passed', () => {
+    const object = {
+      _removeMe: true,
+      foo: {
+        _alsoMe: {
+          biz: 123,
+        },
+        _removeMe: true,
+        bar: undefined,
+        biz: 123,
+        qux: [
+          undefined,
+          {},
+          true
+        ],
+      },
+    };
+
+    expect(cleanDeep(object, { cleanKeysPrefixes: ['_remove', '_also'] })).toEqual({
+      foo: {
+        biz: 123,
+        qux: [true]
+      }
+    });
+  })
+
+  it('should remove values with specified prefix if `cleanValuesPrefixes` is passed', () => {
+    const object = {
+      _removeMeNot: true,
+      foo: {
+        bar: undefined,
+        baz: {
+          biz: '_removeMe',
+        },
+        biz: 123,
+        cool: '_alsoMe',
+        qux: [
+          undefined,
+          {},
+          '_removeThisValueToo',
+          true
+        ],
+      },
+    };
+
+    expect(cleanDeep(object, { cleanValuesPrefixes: ['_remove', '_also'] })).toEqual({
+      _removeMeNot: true,
+      foo: {
+        biz: 123,
+        qux: [true]
+      }
+    });
+  })
 });
