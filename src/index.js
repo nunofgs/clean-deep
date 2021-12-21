@@ -14,6 +14,8 @@ const transform = require('lodash.transform');
 module.exports = function cleanDeep(object, {
   cleanKeys = [],
   cleanValues = [],
+  cleanKeysPrefixes = [],
+  cleanValuesPrefixes = [],
   emptyArrays = true,
   emptyObjects = true,
   emptyStrings = true,
@@ -27,6 +29,13 @@ module.exports = function cleanDeep(object, {
       return;
     }
 
+    // Exclude keys with specific prefixes.
+    const hasExcludedKeyPrefix = cleanKeysPrefixes.some((prefix) => key.startsWith(prefix));
+
+    if (hasExcludedKeyPrefix) {
+      return;
+    }
+
     // Recurse into arrays and objects.
     if (Array.isArray(value) || isPlainObject(value)) {
       value = cleanDeep(value, { NaNValues, cleanKeys, cleanValues, emptyArrays, emptyObjects, emptyStrings, nullValues, undefinedValues });
@@ -34,6 +43,13 @@ module.exports = function cleanDeep(object, {
 
     // Exclude specific values.
     if (cleanValues.includes(value)) {
+      return;
+    }
+
+    // Exclude string values with specific prefixes.
+    const hasExcludedValuePrefix = typeof value === 'string' && cleanValuesPrefixes.some((prefix) => value.startsWith(prefix));
+
+    if (hasExcludedValuePrefix) {
       return;
     }
 
