@@ -30,9 +30,7 @@ module.exports = function cleanDeep(object, {
     }
 
     // Exclude keys with specific prefixes.
-    const hasExcludedKeyPrefix = typeof key === 'string' && cleanKeysPrefixes.some((prefix) => key.startsWith(prefix));
-
-    if (hasExcludedKeyPrefix) {
+    if (typeof key === 'string' && cleanKeysPrefixes.some((prefix) => key.startsWith(prefix))) {
       return;
     }
 
@@ -47,9 +45,7 @@ module.exports = function cleanDeep(object, {
     }
 
     // Exclude string values with specific prefixes.
-    const hasExcludedValuePrefix = typeof value === 'string' && cleanValuesPrefixes.some((prefix) => value.startsWith(prefix));
-
-    if (hasExcludedValuePrefix) {
+    if (typeof value === 'string' && cleanValuesPrefixes.some((prefix) => value.startsWith(prefix))) {
       return;
     }
 
