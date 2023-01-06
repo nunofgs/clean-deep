@@ -21,6 +21,9 @@ describe('cleanDeep()', () => {
         buz: null,
         net: '',
         qux: 100
+      },
+      foz: {
+        [Symbol('foo')]: 'foo'
       }
     };
 

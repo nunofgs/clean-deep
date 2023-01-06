@@ -28,7 +28,7 @@
     "version": "yarn changelog && git add -A CHANGELOG.md"
   },
   "dependencies": {
-    "lodash.isempty": "^4.4.0",
+    "lodash.has": "^4.5.2",
     "lodash.isplainobject": "^4.0.6",
     "lodash.transform": "^4.6.0"
   },

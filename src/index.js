@@ -3,9 +3,25 @@
  * Module dependencies.
  */
 
-const isEmpty = require('lodash.isempty');
+const has = require('lodash.has');
 const isPlainObject = require('lodash.isplainobject');
 const transform = require('lodash.transform');
+
+/**
+ * Checks if an object is empty.
+ * This is an alternative version if `_.isEmpty` that works with symbols as keys.
+ * See: https://github.com/lodash/lodash/issues/3492 & https://github.com/lodash/lodash/issues/4167
+ */
+
+function isObjectEmpty(object) {
+  for (const name in object) {
+    if (has(object, name)) {
+      return false
+    }
+  }
+
+  return true
+}
 
 /**
  * Export `cleanDeep` function.
@@ -38,7 +54,7 @@ module.exports = function cleanDeep(object, {
     }
 
     // Exclude empty objects.
-    if (emptyObjects && isPlainObject(value) && isEmpty(value)) {
+    if (emptyObjects && isPlainObject(value) && isObjectEmpty(value)) {
       return;
     }
 
