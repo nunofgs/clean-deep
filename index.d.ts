@@ -4,7 +4,7 @@ export default cleanDeep;
 
 export type CleanOptions = {
     cleanKeys?: string[];
-    cleanValues?: string[];
+    cleanValues?: (string | number)[];
     emptyArrays?: boolean;
     emptyObjects?: boolean;
     emptyStrings?: boolean;
