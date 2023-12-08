@@ -1,12 +1,13 @@
-declare function cleanDeep<T>(object: T, options?: CleanOptions): T;
+declare function cleanDeep<T>(object: T, options?: CleanOptions): Partial<T>;
 declare function cleanDeep<T>(
   object: T,
-  options?: CleanOptions & CleanKeysOptions
-): Partial<T>;
+  options?: CleanOptions & KeepTypeOptions
+): T;
 
 export default cleanDeep;
 
 export type CleanOptions = {
+  cleanKeys?: string[];
   cleanValues?: string[];
   emptyArrays?: boolean;
   emptyObjects?: boolean;
@@ -16,6 +17,6 @@ export type CleanOptions = {
   undefinedValues?: boolean;
 };
 
-export type CleanKeysOptions = {
-  cleanKeys: string[];
+export type KeepTypeOptions = {
+  keepType: boolean;
 };
